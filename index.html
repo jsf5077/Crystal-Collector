@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en-us">
+  <head>
+    <meta charset="UTF-8">
+    <title>Crystal Collector</title>
+    <!-- Added link to the jQuery Library -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <!-- Added a link to Bootstrap-->
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css">
+  </head>
+
+  <body>
+    <script type="text/javascript">
+        $(document).ready(function() {
+
+        //GAME STRUCTURE
+        
+        //BOX CONTAINING NUMBER POPULATED BY USER PICKS
+        var userNum = 0; 
+        //WINS TALLY
+        var wins = 0;
+        $("#wins").text("wins: "+wins);
+        //LOSSES TALLY
+        var losses = 0;
+        $("#losses").text("losses: "+losses);
+
+        //RANDOM NUMBER ASSIGNED TO BUTTON 1
+        var butt1 = Math.floor(Math.random() * 12) +1;
+        //BUTTON 2
+        //BUTTON 3
+        //BUTTON 4
+
+        // GAME START 
+        //COMPUTER PICKS A RANDOM NUMBER BETWEEN 35 AND 100*
+        var compNum = Math.floor(Math.random() * 65) +35; 
+        $("#game-total").text("game total: "+compNum);
+
+        //USER PRESSED BUTTON 1
+        //RANDOM NUMBER ASSIGNED TO BUTTON IS ADDED TO USER TOTAL
+        $("#button-1").on("click", function() {
+            userNum = userNum + butt1;
+            $("#user-total").text("user total: "+userNum);
+            console.log("button one pressed");
+            console.log("User total: "+userNum);
+            checkWin();
+        });
+        
+        
+        
+        function checkWin() {
+            //IF TOTAL BY USER TOTAL === COMPUTER GUESS.
+            if (userNum === compNum) {
+                //ADD 1 TO WIN COLUMN AND RESET GAME
+                wins++;
+                console.log(wins);
+                $("#wins").text("wins: "+wins);
+            // IF TOTAL BY USER > COMPUTER GUESS
+            } else if (userNum > compNum) {
+            //ADD 1 TO LOSS COLUMN AND RESET GAME
+                losses++;
+                console.log(losses);
+                $("#losses").text("losses: "+losses);
+
+            } else if(userNum < compNum) {
+                return;
+            }
+        
+
+        //IF TOTAL BY USER < COMPUTER GUESS
+        //RETURN
+
+        }
+        
+
+        
+        
+        
+        
+        
+        });    
+    </script>
+
+    <div class="jumbtron">Magic Gem Game</div>
+    <div class="row">
+        <div class="col-6" id="game-total"></div>
+        <div class="col-6" id="user-total">user total: 0</div>
+    </div>
+    <div>
+        <div class="col-6" id="wins"></div>
+        <div class="col-6" id="losses"></div>
+    </div>
+
+    <div class="row">
+        <div class="btn btn-primary btn-lg" id="button-1">button1</div>
+        <div class="btn btn-primary btn-lg" id="button-2">button2</div>
+        <div class="btn btn-primary btn-lg" id="button-3">button3</div>
+        <div class="btn btn-primary btn-lg" id="button-4">button4</div>
+    </div>
+  </body>
+
+  </html>
