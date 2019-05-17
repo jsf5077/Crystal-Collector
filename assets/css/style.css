@@ -1,0 +1,22 @@
+h1 {
+    font-size: 120px;
+}
+
+p {
+    font-size: 60px;
+    text-shadow: 4px 4px  rgba(0, 0, 0, 0.6);
+}
+
+
+body {
+    background-image: url("../images/wallpaper.jpg");
+	min-height: 100%;
+	background-repeat: no-repeat;
+	background-attachment: fixed;
+	background-position: center;
+	background-size: cover;
+}
+
+img {
+    max-width: 50%;
+}
