@@ -12,7 +12,7 @@
   <body>
 
 
-    <div class="jumbtron">Magic Gem Game</div>
+    <h1 class="jumbtron jumbotron-fluid bg-dark text-center py-5 mb-4">Magic Gem Game</h1>
     <div class="row">
         <div class="col-6" id="game-total"></div>
         <div class="col-6" id="user-total">user total: 0</div>
@@ -29,133 +29,8 @@
         <div class="btn btn-primary btn-lg" id="button-4">button4</div>
     </div>
 
-    <script type="text/javascript">
-
-
-        //WINS TALLY
-        var wins = 0;
-        $("#wins").text("wins: "+wins);
-
-        //LOSSES TALLY
-        var losses = 0;
-        $("#losses").text("losses: "+losses);
-
-        //BOX CONTAINING NUMBER POPULATED BY USER PICKS
-        var userNum = 0; 
-
-        //DECLARE A VARIABLE FOR THE COMPUTER NUMBER
-        var compNum = 0;
-
-        //RANDOM NUMBER ASSIGNED TO BUTTON 1
-        var butt1 = Math.floor(Math.random() * 12) +1;
-
-        //RANDOM NUMBER ASSIGNED TO BUTTON 2
-        var butt2 = Math.floor(Math.random() * 12) +1;
-
-        //RANDOM NUMBER ASSIGNED TO BUTTON 3
-        var butt3 = Math.floor(Math.random() * 12) +1;
-
-        //RANDOM NUMBER ASSIGNED TO BUTTON 4
-        var butt4 = Math.floor(Math.random() * 12) +1;
-
-
-        //BUTTON 2
-        //BUTTON 3
-        //BUTTON 4
-
-        function gameStart() {
-
-            // INITIALIZE/RESET THE USER NUMBER TO ZERO
-            userNum = 0;
-
-            //RANDOM NUMBER REASSIGNED TO BUTTON 1
-            butt1 = Math.floor(Math.random() * 12) +1;
-
-            //RANDOM NUMBER REASSIGNED TO BUTTON 2
-            butt2 = Math.floor(Math.random() * 12) +1;
-
-            //RANDOM NUMBER REASSIGNED TO BUTTON 3
-            butt3 = Math.floor(Math.random() * 12) +1;
-
-            //RANDOM NUMBER REASSIGNED TO BUTTON 4
-            butt4 = Math.floor(Math.random() * 12) +1;
-
-            //COMPUTER PICKS A RANDOM NUMBER BETWEEN 35 AND 100*
-            compNum = Math.floor(Math.random() * 65) +35; 
-            $("#game-total").text("game total: "+compNum);
-        }
-
-        //START THE GAME
-        gameStart();
-
-        //USER PRESSED BUTTON 1
-        //RANDOM NUMBER ASSIGNED TO BUTTON IS ADDED TO USER TOTAL
-        $("#button-1").on("click", function() {
-            userNum = userNum + butt1;
-            $("#user-total").text("user total: "+userNum);
-            console.log("button one pressed");
-            console.log("User total: "+userNum);
-            checkWin();
-        });
-
-        //USER PRESSED BUTTON 2
-        //RANDOM NUMBER ASSIGNED TO BUTTON IS ADDED TO USER TOTAL
-        $("#button-2").on("click", function() {
-            userNum = userNum + butt2;
-            $("#user-total").text("user total: "+userNum);
-            console.log("button one pressed");
-            console.log("User total: "+userNum);
-            checkWin();
-        });
-
-        //USER PRESSED BUTTON 3
-        //RANDOM NUMBER ASSIGNED TO BUTTON IS ADDED TO USER TOTAL
-        $("#button-3").on("click", function() {
-            userNum = userNum + butt3;
-            $("#user-total").text("user total: "+userNum);
-            console.log("button one pressed");
-            console.log("User total: "+userNum);
-            checkWin();
-        });
-
-        //USER PRESSED BUTTON 4
-        //RANDOM NUMBER ASSIGNED TO BUTTON IS ADDED TO USER TOTAL
-        $("#button-4").on("click", function() {
-            userNum = userNum + butt4;
-            $("#user-total").text("user total: "+userNum);
-            console.log("button one pressed");
-            console.log("User total: "+userNum);
-            checkWin();
-        });
-
-        function checkWin() {
-            //IF TOTAL BY USER TOTAL === COMPUTER GUESS.
-            if (userNum === compNum) {
-                //ADD 1 TO WIN COLUMN AND RESET GAME
-                wins++;
-                console.log(wins);
-                $("#wins").text("wins: "+wins);
-                gameStart();
-                
-                // IF TOTAL BY USER > COMPUTER GUESS
-            } else if (userNum > compNum) {
-                //ADD 1 TO LOSS COLUMN AND RESET GAME
-                losses++;
-                console.log(losses);
-                $("#losses").text("losses: "+losses);
-                gameStart();
-
-            } else if(userNum < compNum) {
-                return;
-            }
-        }
-        
-        
-
-        //IF TOTAL BY USER < COMPUTER GUESS
-        //RETURN
-
-    </script>
+    
+    <script type="text/javascript" src="assets/javascript/game.js"></script>
   </body>
 
   </html>
