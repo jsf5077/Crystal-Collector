@@ -52,6 +52,12 @@
         //RANDOM NUMBER ASSIGNED TO BUTTON 2
         var butt2 = Math.floor(Math.random() * 12) +1;
 
+        //RANDOM NUMBER ASSIGNED TO BUTTON 3
+        var butt3 = Math.floor(Math.random() * 12) +1;
+
+        //RANDOM NUMBER ASSIGNED TO BUTTON 4
+        var butt4 = Math.floor(Math.random() * 12) +1;
+
 
         //BUTTON 2
         //BUTTON 3
@@ -62,8 +68,17 @@
             // INITIALIZE/RESET THE USER NUMBER TO ZERO
             userNum = 0;
 
-            //RANDOM NUMBER ASSIGNED TO BUTTON 1
+            //RANDOM NUMBER REASSIGNED TO BUTTON 1
             butt1 = Math.floor(Math.random() * 12) +1;
+
+            //RANDOM NUMBER REASSIGNED TO BUTTON 2
+            butt2 = Math.floor(Math.random() * 12) +1;
+
+            //RANDOM NUMBER REASSIGNED TO BUTTON 3
+            butt3 = Math.floor(Math.random() * 12) +1;
+
+            //RANDOM NUMBER REASSIGNED TO BUTTON 4
+            butt4 = Math.floor(Math.random() * 12) +1;
 
             //COMPUTER PICKS A RANDOM NUMBER BETWEEN 35 AND 100*
             compNum = Math.floor(Math.random() * 65) +35; 
@@ -77,6 +92,36 @@
         //RANDOM NUMBER ASSIGNED TO BUTTON IS ADDED TO USER TOTAL
         $("#button-1").on("click", function() {
             userNum = userNum + butt1;
+            $("#user-total").text("user total: "+userNum);
+            console.log("button one pressed");
+            console.log("User total: "+userNum);
+            checkWin();
+        });
+
+        //USER PRESSED BUTTON 2
+        //RANDOM NUMBER ASSIGNED TO BUTTON IS ADDED TO USER TOTAL
+        $("#button-2").on("click", function() {
+            userNum = userNum + butt2;
+            $("#user-total").text("user total: "+userNum);
+            console.log("button one pressed");
+            console.log("User total: "+userNum);
+            checkWin();
+        });
+
+        //USER PRESSED BUTTON 3
+        //RANDOM NUMBER ASSIGNED TO BUTTON IS ADDED TO USER TOTAL
+        $("#button-3").on("click", function() {
+            userNum = userNum + butt3;
+            $("#user-total").text("user total: "+userNum);
+            console.log("button one pressed");
+            console.log("User total: "+userNum);
+            checkWin();
+        });
+
+        //USER PRESSED BUTTON 4
+        //RANDOM NUMBER ASSIGNED TO BUTTON IS ADDED TO USER TOTAL
+        $("#button-4").on("click", function() {
+            userNum = userNum + butt4;
             $("#user-total").text("user total: "+userNum);
             console.log("button one pressed");
             console.log("User total: "+userNum);
