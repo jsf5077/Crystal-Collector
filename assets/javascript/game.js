@@ -2,15 +2,15 @@
 
         //WINS TALLY
         var wins = 0;
-        $("#wins").text("Wins: "+wins);
+        $("#wins").text("Good Collections: "+wins);
 
         //LOSSES TALLY
         var losses = 0;
-        $("#losses").text("Losses: "+losses);
+        $("#losses").text("Spoils: "+losses);
 
         //BOX CONTAINING NUMBER POPULATED BY USER PICKS
         var userNum = 0;
-        console.log("Your Number: "+userNum); 
+        console.log("Your Scale: "+userNum+" lbs"); 
 
         //DECLARE A VARIABLE FOR THE COMPUTER NUMBER
         var compNum = 0;
@@ -31,7 +31,7 @@
 
             // INITIALIZE/RESET THE USER NUMBER TO ZERO
             userNum = 0;
-            $("#user-total").text("Your Number: "+userNum)
+            $("#user-total").text("Your Scale: "+userNum+" lbs")
 
             //RANDOM NUMBER REASSIGNED TO BUTTON 1
             butt1 = Math.floor(Math.random() * 12) +1;
@@ -47,7 +47,7 @@
 
             //COMPUTER PICKS A RANDOM NUMBER BETWEEN 35 AND 100*
             compNum = Math.floor(Math.random() * 65) +35; 
-            $("#game-total").text("Match Number: "+compNum);
+            $("#game-total").text("G.E.M. Scale: "+compNum+" lbs");
         }
 
         //START THE GAME
@@ -57,7 +57,7 @@
         //RANDOM NUMBER ASSIGNED TO BUTTON IS ADDED TO USER TOTAL
         $("#button-1").on("click", function() {
             userNum = userNum + butt1;
-            $("#user-total").text("Your Number: "+userNum);
+            $("#user-total").text("Your Scale: "+userNum+" lbs");
             console.log("button one pressed");
             console.log("User total: "+userNum);
             checkWin();
@@ -67,7 +67,7 @@
         //RANDOM NUMBER ASSIGNED TO BUTTON IS ADDED TO USER TOTAL
         $("#button-2").on("click", function() {
             userNum = userNum + butt2;
-            $("#user-total").text("Your Number: "+userNum);
+            $("#user-total").text("Your Scale: "+userNum+" lbs");
             console.log("button one pressed");
             console.log("User total: "+userNum);
             checkWin();
@@ -77,7 +77,7 @@
         //RANDOM NUMBER ASSIGNED TO BUTTON IS ADDED TO USER TOTAL
         $("#button-3").on("click", function() {
             userNum = userNum + butt3;
-            $("#user-total").text("Your Number: "+userNum);
+            $("#user-total").text("Your Scale: "+userNum+" lbs");
             console.log("button one pressed");
             console.log("User total: "+userNum);
             checkWin();
@@ -87,7 +87,7 @@
         //RANDOM NUMBER ASSIGNED TO BUTTON IS ADDED TO USER TOTAL
         $("#button-4").on("click", function() {
             userNum = userNum + butt4;
-            $("#user-total").text("Your Number: "+userNum);
+            $("#user-total").text("Your Scale: "+userNum+" lbs");
             console.log("button one pressed");
             console.log("User total: "+userNum);
             checkWin();
@@ -100,7 +100,12 @@
                 wins++;
                 console.log(wins);
                 //PUSH WINS TO THE WINS HTML
-                $("#wins").text("Wins: "+wins);
+                $("#wins").text("Good Collections: "+wins);
+                alert ("Collection Successful!");
+                //Gain Gem Master Title
+                if (wins = 5) {
+                    $("#title").text("GEM MASTER!");
+                }
                 //RESET GAME
                 gameStart();
                 
@@ -110,7 +115,8 @@
                 losses++;
                 console.log(losses);
                 //PUSH LOSSES TO THE LOSS HTML
-                $("#losses").text("Losses: "+losses);
+                $("#losses").text("Spoils: "+losses);
+                alert ("Collection spoiled...");
                 //RESET GAME
                 gameStart();
 
